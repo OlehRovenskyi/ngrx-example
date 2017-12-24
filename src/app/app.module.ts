@@ -14,7 +14,8 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { AboutComponent } from './about';
+import { CounterComponent } from './counter';
+import { ExamplesComponent } from './examples';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -38,7 +39,8 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent
+    ExamplesComponent,
+    CounterComponent
   ],
   /**
    * Import Angular's modules.

@@ -1,4 +1,5 @@
-<h3>Counter</h3>
+<h3>Counter value: {{ (currentValue$ | async)?.counter }}</h3>
 
-<button>+ 1</button>
-<button>- 1</button>
+<button (click)="increment()">+ 1</button>
+<button (click)="decrement()">- 1</button>
+<button (click)="reset()">reset</button>

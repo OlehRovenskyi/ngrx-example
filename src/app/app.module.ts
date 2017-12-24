@@ -14,8 +14,10 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { CounterComponent } from './counter';
+import { CounterModule, counter } from './counter';
 import { ExamplesComponent } from './examples';
+import { SharedModule } from './shared';
+import { StoreModule } from '@ngrx/store';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -39,8 +41,7 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    ExamplesComponent,
-    CounterComponent
+    ExamplesComponent
   ],
   /**
    * Import Angular's modules.
@@ -50,6 +51,9 @@ type StoreType = {
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    CounterModule,
+    SharedModule,
+    StoreModule.forRoot({ counter }),
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules

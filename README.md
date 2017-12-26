@@ -12,3 +12,6 @@ Counter using @ngrx:
 2. actions
 3. effects
 4. reducer
+
+**branch: debugging**
+using ngrx/store-devtools for debugging store

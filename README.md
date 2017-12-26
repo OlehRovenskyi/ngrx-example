@@ -6,3 +6,9 @@ Counter using @ngrx:
 1. state
 2. actions
 3. reducer
+
+**branch: counter-with-effect**
+1. state
+2. actions
+3. effects
+4. reducer

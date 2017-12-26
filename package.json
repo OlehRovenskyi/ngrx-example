@@ -94,6 +94,7 @@
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "^4.1.1",
     "@ngrx/store": "^4.1.1",
+    "@ngrx/store-devtools": "^4.1.1",
     "@types/lodash": "^4.14.91",
     "core-js": "^2.5.1",
     "http-server": "^0.10.0",

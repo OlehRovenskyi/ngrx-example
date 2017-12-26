@@ -23,6 +23,7 @@ import { CounterEffects } from './counter';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -57,6 +58,7 @@ type StoreType = {
     SharedModule,
     StoreModule.forRoot({ counter }),
     EffectsModule.forRoot([CounterEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 50 }),
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules

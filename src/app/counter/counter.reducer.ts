@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 import { CounterState } from './counter.models';
 import { initialState } from './counter.const';
 
-import { INCREMENT, DECREMENT, RESET } from './counter.actions';
+import { INCREMENT, DECREMENT, RESET_SUCCESS } from './counter.actions';
 
 export function counter(state: CounterState = initialState, action: Action): CounterState {
   switch (action.type) {
@@ -18,7 +18,7 @@ export function counter(state: CounterState = initialState, action: Action): Cou
       };
     }
 
-    case RESET: {
+    case RESET_SUCCESS: {
       return {
         counter: 0
       };

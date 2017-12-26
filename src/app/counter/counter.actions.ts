@@ -16,7 +16,3 @@ export class DecrementAction implements Action {
 export class ResetAction implements Action {
   public readonly type: string = RESET;
 }
-
-export class ResetSuccessAction implements Action {
-  public readonly type: string = RESET_SUCCESS;
-}

@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { CounterModule, counter } from './counter';
-import { ExamplesComponent } from './examples';
 import { SharedModule } from './shared';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -43,8 +42,7 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
-    AppComponent,
-    ExamplesComponent
+    AppComponent
   ],
   /**
    * Import Angular's modules.

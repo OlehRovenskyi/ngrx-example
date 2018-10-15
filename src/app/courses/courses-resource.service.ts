@@ -16,7 +16,7 @@ export class CoursesResourceService {
     this.baseUrl = 'http://localhost:3004';
   }
 
-  public getCourses(): Observable<CoursesInfo> {
+  public loadCourses(): Observable<CoursesInfo> {
     return this.http
       .get(`${ this.baseUrl }/courses`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));

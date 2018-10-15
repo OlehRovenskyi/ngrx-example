@@ -2,20 +2,32 @@ import { Action } from '@ngrx/store';
 import { CoursesState } from './courses.models';
 import { initialState } from './courses.const';
 
-import { R_COUNTER_INCREMENT } from './courses.actions';
+import {
+  LOAD_COURSES_ERROR,
+  LOAD_COURSES_SUCCESS
+} from './courses.actions';
 
 export function courses(state: CoursesState = initialState, action: Action): CoursesState {
   switch (action.type) {
-    case R_COUNTER_INCREMENT: {
+    case LOAD_COURSES_SUCCESS: {
       return {
-        courses: []
+        courses: state.courses,
+        count: state.count
       };
     }
 
-    // default: {
-    //   return {
-    //     // counter: state.courses
-    //   };
-    // }
+    case LOAD_COURSES_ERROR: {
+      return {
+        courses: [],
+        count: 0
+      };
+    }
+
+    default: {
+      return {
+        courses: state.courses,
+        count: state.count
+      };
+    }
   }
 }

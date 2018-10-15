@@ -14,7 +14,11 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { CoursesModule } from './courses';
+import {
+  courses,
+  CoursesEffects,
+  CoursesModule
+} from './courses';
 import { SharedModule } from './shared';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -53,8 +57,8 @@ type StoreType = {
     HttpClientModule,
     CoursesModule,
     SharedModule,
-    // StoreModule.forRoot({ counter }),
-    // EffectsModule.forRoot([CounterEffects]),
+    StoreModule.forRoot({ courses }),
+    EffectsModule.forRoot([CoursesEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 50 }),
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,

@@ -4,8 +4,10 @@ import {
 
 import { CoursesInfo, CoursesState} from './courses.models';
 import { CoursesResourceService } from './courses-resource.service';
+import { LoadCoursesAction } from 'app/courses/courses.actions';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'courses',
@@ -14,20 +16,19 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-  private currentValue$: Observable<CoursesState>;
+  public coursesStore$: any; // Observable<CoursesState>;
 
   constructor(
-    private coursesResourceService: CoursesResourceService
-  ) {}
-
-  public ngOnInit(): void {
-    this.getCourses();
+    private store: Store<CoursesState>
+  ) {
+    this.coursesStore$ = this.store.select('courses');
   }
 
-  public getCourses(): void {
-    this.coursesResourceService.getCourses()
-      .subscribe((courses: CoursesInfo) => {
-        console.log(courses);
-      });
+  public ngOnInit(): void {
+    this.loadCourses();
+  }
+
+  private loadCourses() {
+    this.coursesStore$.dispatch(new LoadCoursesAction());
   }
 }

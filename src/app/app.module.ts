@@ -14,11 +14,10 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { CounterModule, counter } from './counter';
+import { CoursesModule } from './courses';
 import { SharedModule } from './shared';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { CounterEffects } from './counter';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -52,10 +51,10 @@ type StoreType = {
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    CounterModule,
+    CoursesModule,
     SharedModule,
-    StoreModule.forRoot({ counter }),
-    EffectsModule.forRoot([CounterEffects]),
+    // StoreModule.forRoot({ counter }),
+    // EffectsModule.forRoot([CounterEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 50 }),
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,

@@ -7,11 +7,13 @@ Counter using @ngrx:
 2. actions
 3. reducer
 
-**branch: counter-with-effect**
+**branch: counter-with-effect-and-debug**
 1. state
 2. actions
 3. effects
 4. reducer
+
+using ngrx/store-devtools for debugging store
 
 **branch: debugging**
 using ngrx/store-devtools for debugging store

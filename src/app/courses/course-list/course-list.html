@@ -1,0 +1,11 @@
+<div class="course-list">
+  <course-item
+    *ngFor="let course of courseList"
+    [course]="course"
+    (onEdit)="editCourse($event)"
+    (onDelete)="deleteCourse($event)"
+    (toggleRaiting)="onToggleRaiting($event)"
+  ></course-item>
+
+  <div *ngIf="!courseList?.length">No data. Feel free to add new course.</div>
+</div>

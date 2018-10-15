@@ -1,5 +1,11 @@
-<h3>Counter value: {{ (currentValue$ | async)?.counter }}</h3>
+<div class="counter">
+  <div class="counter__wrapper">
+    <div class="counter__value">{{ (currentValue$ | async)?.counter }}</div>
+  </div>
 
-<button (click)="increment()">+ 1</button>
-<button (click)="decrement()">- 1</button>
-<button (click)="reset()">reset</button>
+  <div class="counter__actions">
+    <button class="btn btn-blue" (click)="increment()">+</button>
+    <button class="btn btn-blue" (click)="decrement()">-</button>
+    <button class="btn btn-yellow" (click)="reset()">reset</button>
+  </div>
+</div>

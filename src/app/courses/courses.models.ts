@@ -22,12 +22,3 @@ export interface CourseItem {
   length?: number;
   duration?: number;
 }
-
-export interface CourseRaiting {
-  id: number;
-  topRated: boolean;
-}
-
-export interface CoursesCount {
-  count: number;
-}

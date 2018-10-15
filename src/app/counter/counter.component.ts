@@ -8,7 +8,8 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'counter',
   styles: [``],
-  templateUrl: './counter.component.html'
+  templateUrl: './counter.component.html',
+  styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent {
   private currentValue$: Observable<CounterState>;

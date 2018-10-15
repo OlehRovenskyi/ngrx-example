@@ -11,8 +11,11 @@ export class LoadCoursesAction implements Action {
 
 export class LoadCoursesSuccessAction implements Action {
   public readonly type: string = LOAD_COURSES_SUCCESS;
+  public payload: CoursesInfo;
 
-  constructor(payload: CoursesInfo) {}
+  constructor(coursesInfo: CoursesInfo) {
+    this.payload = coursesInfo;
+  }
 }
 
 export class LoadCoursesErrorAction implements Action {

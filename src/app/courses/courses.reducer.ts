@@ -4,15 +4,18 @@ import { initialState } from './courses.const';
 
 import {
   LOAD_COURSES_ERROR,
-  LOAD_COURSES_SUCCESS
+  LOAD_COURSES_SUCCESS, LoadCoursesErrorAction, LoadCoursesSuccessAction
 } from './courses.actions';
 
-export function courses(state: CoursesState = initialState, action: Action): CoursesState {
+export function courses(
+  state: CoursesState = initialState,
+  action: Action & LoadCoursesSuccessAction & LoadCoursesErrorAction
+): CoursesState {
   switch (action.type) {
     case LOAD_COURSES_SUCCESS: {
       return {
-        courses: state.courses,
-        count: state.count
+        courses: action.payload.courses,
+        count: action.payload.count
       };
     }
 

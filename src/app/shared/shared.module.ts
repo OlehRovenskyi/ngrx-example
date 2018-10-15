@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 
-import { StoreUtilsService } from './store-utils';
-
 @NgModule({
   imports: [],
   exports: [],
-  providers: [
-    StoreUtilsService
-  ]
+  providers: []
 })
 export class SharedModule {}

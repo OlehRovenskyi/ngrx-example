@@ -1,1 +1,10 @@
+.course-item {
+  padding: 20px;
+  border-bottom: 2px solid #5B2C6F;
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+}

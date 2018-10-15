@@ -1,6 +1,3 @@
 <div class="courses">
-  <course-list
-    class="courses__list"
-    [courseList]="(coursesStore$ | async)?.courses"
-  ></course-list>
+  <course-list [courseList]="(coursesStore$ | async)?.courses"></course-list>
 </div>

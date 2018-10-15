@@ -1,13 +1,10 @@
 <div class="course-item">
-  <div class="col-md-12">
-    <div>
-      <div class="">{{ course.name | uppercase}}</div>
-      <div class="">{{ course.duration }}</div>
-      <div class="">{{ course.date | date: "MM/dd/yy" }}</div>
-    </div>
+  <div class="course-item__header">
+    <div class="">{{ course.name | uppercase}}</div>
+    <div class="">{{ course.date | date: "MM/dd/yy" }}</div>
+  </div>
 
-    <div>
-      {{ course.description }}
-    </div>
+  <div class="course-item__description">
+    {{ course.description }}
   </div>
 </div>

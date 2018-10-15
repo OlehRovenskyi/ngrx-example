@@ -22,8 +22,6 @@ export class CoursesComponent implements OnInit {
     private store: Store<CoursesState>
   ) {
     this.coursesStore$ = this.store.select('courses');
-
-    // this.coursesStore$.subscribe(data => {console.log(data)})
   }
 
   public ngOnInit(): void {

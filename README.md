@@ -10,5 +10,6 @@ For start app using https://github.com/gdi2290/angular-starter
 **Run json server:**
 
 1. go to json-server directory: `cd json-server`
-2. run json-server `npm run start`
+2. install dependency: `npm i`
+3. run json-server `npm run start`
 json-server will be start on `3004` port.

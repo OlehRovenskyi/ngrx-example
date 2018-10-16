@@ -18,7 +18,7 @@ import { Store } from '@ngrx/store';
 export class CoursesComponent implements OnInit {
   public coursesStore$: Observable<CoursesState>;
 
-  constructor(
+  public constructor(
     private store: Store<CoursesState>
   ) {
     this.coursesStore$ = this.store.select(getCoursesState);

@@ -11,9 +11,9 @@ export class LoadCoursesAction implements Action {
 
 export class LoadCoursesSuccessAction implements Action {
   public readonly type: string = LOAD_COURSES_SUCCESS;
-  public payload: CourseItem[];
+  public readonly payload: CourseItem[];
 
-  constructor(coursesInfo: CourseItem[]) {
+  public constructor(coursesInfo: CourseItem[]) {
     this.payload = coursesInfo;
   }
 }

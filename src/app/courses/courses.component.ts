@@ -3,8 +3,8 @@ import {
 } from '@angular/core';
 
 import { CoursesState} from './courses.models';
-import { CoursesResourceService } from './courses-resource.service';
 import { LoadCoursesAction } from 'app/courses/courses.actions';
+import { getCoursesState } from 'app/courses/courses.selectors';
 
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -16,12 +16,12 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-  public coursesStore$: any; // Observable<CoursesState>;
+  public coursesStore$: Observable<CoursesState>;
 
   constructor(
     private store: Store<CoursesState>
   ) {
-    this.coursesStore$ = this.store.select('courses');
+    this.coursesStore$ = this.store.select(getCoursesState);
   }
 
   public ngOnInit(): void {
@@ -29,6 +29,6 @@ export class CoursesComponent implements OnInit {
   }
 
   private loadCourses() {
-    this.coursesStore$.dispatch(new LoadCoursesAction());
+    this.store.dispatch(new LoadCoursesAction());
   }
 }

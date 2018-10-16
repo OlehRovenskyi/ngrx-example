@@ -16,4 +16,4 @@ Counter using @ngrx:
 using ngrx/store-devtools for debugging store
 
 **branch: debugging**
-using ngrx/store-devtools for debugging store
+simple-counter with effect and ngrx/store-devtools for debugging store

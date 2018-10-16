@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { CoursesInfo } from 'app/courses/courses.models';
+import { CourseItem } from 'app/courses/courses.models';
 
 export const LOAD_COURSES: string = '[Courses Page] Load Courses';
 export const LOAD_COURSES_SUCCESS: string = '[Courses API] Load Courses Success';
@@ -11,9 +11,9 @@ export class LoadCoursesAction implements Action {
 
 export class LoadCoursesSuccessAction implements Action {
   public readonly type: string = LOAD_COURSES_SUCCESS;
-  public payload: CoursesInfo;
+  public payload: CourseItem[];
 
-  constructor(coursesInfo: CoursesInfo) {
+  constructor(coursesInfo: CourseItem[]) {
     this.payload = coursesInfo;
   }
 }

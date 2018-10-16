@@ -10,12 +10,11 @@ import { Observable } from 'rxjs';
 
 import {
   LOAD_COURSES,
-  LOAD_COURSES_SUCCESS,
   LoadCoursesErrorAction,
   LoadCoursesSuccessAction
 } from 'app/courses/courses.actions';
 import { CoursesResourceService } from 'app/courses/courses-resource.service';
-import { CoursesInfo } from 'app/courses/courses.models';
+import { CourseItem } from 'app/courses/courses.models';
 
 @Injectable()
 export class CoursesEffects {
@@ -38,7 +37,7 @@ export class CoursesEffects {
     .ofType(LOAD_COURSES)
     .switchMap(() => {
       return this.coursesResourceService.loadCourses()
-        .map((coursesInfo: CoursesInfo ) => new LoadCoursesSuccessAction(coursesInfo))
+        .map((coursesInfo: CourseItem[]) => new LoadCoursesSuccessAction(coursesInfo))
         .catch((error) => of(new LoadCoursesErrorAction()))
     });
 

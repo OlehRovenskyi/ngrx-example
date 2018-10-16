@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators';
 
-import { CoursesInfo } from 'app/courses/courses.models';
+import { CourseItem } from 'app/courses/courses.models';
 
 @Injectable()
 export class CoursesResourceService {
@@ -16,7 +16,7 @@ export class CoursesResourceService {
     this.baseUrl = 'http://localhost:3004';
   }
 
-  public loadCourses(): Observable<CoursesInfo> {
+  public loadCourses(): Observable<CourseItem[]> {
     return this.http
       .get(`${ this.baseUrl }/courses`)
       .pipe(catchError((error: any) => Observable.throw(error.json())));

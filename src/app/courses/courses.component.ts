@@ -2,7 +2,7 @@ import {
   Component, OnInit, ViewEncapsulation
 } from '@angular/core';
 
-import { CoursesInfo, CoursesState} from './courses.models';
+import { CoursesState} from './courses.models';
 import { CoursesResourceService } from './courses-resource.service';
 import { LoadCoursesAction } from 'app/courses/courses.actions';
 

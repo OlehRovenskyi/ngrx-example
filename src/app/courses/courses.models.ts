@@ -1,11 +1,5 @@
 export interface CoursesState {
   courses: CourseItem[];
-  count: number;
-}
-
-export interface CoursesInfo {
-  courses: CourseItem[];
-  count: number;
 }
 
 export interface CourseItem {

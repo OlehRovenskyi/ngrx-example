@@ -4,7 +4,9 @@ import { initialState } from './courses.const';
 
 import {
   LOAD_COURSES_ERROR,
-  LOAD_COURSES_SUCCESS, LoadCoursesErrorAction, LoadCoursesSuccessAction
+  LOAD_COURSES_SUCCESS,
+  LoadCoursesErrorAction,
+  LoadCoursesSuccessAction
 } from './courses.actions';
 
 export function courses(
@@ -14,22 +16,19 @@ export function courses(
   switch (action.type) {
     case LOAD_COURSES_SUCCESS: {
       return {
-        courses: action.payload.courses,
-        count: action.payload.count
+        courses: action.payload
       };
     }
 
     case LOAD_COURSES_ERROR: {
       return {
-        courses: [],
-        count: 0
+        courses: []
       };
     }
 
     default: {
       return {
-        courses: state.courses,
-        count: state.count
+        courses: state.courses
       };
     }
   }

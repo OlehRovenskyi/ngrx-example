@@ -5,5 +5,4 @@ For start app using https://github.com/gdi2290/angular-starter
 2. actions
 3. effects
 4. reducer
-
-using ngrx/store-devtools for debugging store
+5. ngrx/store-devtools for debugging store

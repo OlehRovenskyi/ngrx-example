@@ -28,15 +28,6 @@ export class CoursesEffects {
       })
     );
 
-  // @Effect()
-  // loadMovies$ = this.actions$
-  //   .ofType(LOAD_COURSES)
-  //   .switchMap(() => {
-  //     return this.coursesResourceService.loadCourses()
-  //       .map((coursesInfo: CourseItem[]) => new LoadCoursesSuccessAction(coursesInfo))
-  //       .catch((error) => of(new LoadCoursesErrorAction()))
-  //   });
-
   constructor(
     private actions$: Actions,
     private coursesResourceService: CoursesResourceService

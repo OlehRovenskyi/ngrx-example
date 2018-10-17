@@ -16,7 +16,7 @@ import { CourseItem } from 'app/courses/courses.models';
 export class CoursesEffects {
 
   @Effect()
-  loadMovies$ = this.actions$
+  loadCourses$ = this.actions$
     .ofType(LOAD_COURSES)
     .pipe(
       switchMap(() => {

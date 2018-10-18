@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import { CoursesState } from './courses.models';
-import { initialState } from './courses.const';
+import { coursesInitialState } from './courses.const';
 
 import {
   LOAD_COURSES_ERROR,
@@ -10,7 +10,7 @@ import {
 } from './courses.actions';
 
 export function courses(
-  state: CoursesState = initialState,
+  state: CoursesState = coursesInitialState,
   action: Action & LoadCoursesSuccessAction & LoadCoursesErrorAction
 ): CoursesState {
   switch (action.type) {

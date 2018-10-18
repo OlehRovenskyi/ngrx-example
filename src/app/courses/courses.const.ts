@@ -1,5 +1,5 @@
 import { CoursesState } from './courses.models';
 
-export const initialState: CoursesState = {
+export const coursesInitialState: CoursesState = {
   courses: []
 };

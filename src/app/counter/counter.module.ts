@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CounterComponent } from './counter.component';
-import { CounterService } from './counter.service';
 
 @NgModule({
   imports: [
@@ -13,8 +12,6 @@ import { CounterService } from './counter.service';
   exports: [
     CounterComponent
   ],
-  providers: [
-    CounterService
-  ]
+  providers: []
 })
 export class CounterModule {}

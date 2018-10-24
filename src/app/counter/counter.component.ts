@@ -2,8 +2,10 @@ import {
   Component
 } from '@angular/core';
 import { CounterState } from './counter.models';
-import { CounterService } from './counter.service';
+import { IncrementAction, DecrementAction, ResetAction } from './counter.actions';
 import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+import { getCounterState } from './counter.selectors';
 
 @Component({
   selector: 'counter',
@@ -12,24 +14,23 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent {
-  private currentValue$: Observable<CounterState>;
+  private counterStore$: Observable<CounterState>;
 
   constructor(
-    private counterService: CounterService,
-    // public actions: CounterActions
+    private store: Store<CounterState>
   ) {
-    this.currentValue$ = counterService.getCurrentValue();
+    this.counterStore$ = this.store.select(getCounterState);
   }
 
   public increment(): void {
-    this.counterService.increment();
+    this.store.dispatch(new IncrementAction());
   }
 
   public decrement(): void {
-    this.counterService.decrement();
+    this.store.dispatch(new DecrementAction());
   }
 
   public reset(): void {
-    this.counterService.reset();
+    this.store.dispatch(new ResetAction());
   }
 }

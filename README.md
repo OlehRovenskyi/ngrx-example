@@ -1,6 +1,6 @@
 For start app using https://github.com/gdi2290/angular-starter
 
-**branch: courses-with-effect**
+**branch: courses-with-effect-and-debugging**
 1. state
 2. actions
 3. effects

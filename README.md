@@ -7,13 +7,16 @@ Counter using @ngrx:
 2. actions
 3. reducer
 
-**branch: counter-with-effect-and-debug**
+**branch: courses-with-effect-and-debugging**
 1. state
 2. actions
 3. effects
 4. reducer
+5. ngrx/store-devtools for debugging store
 
-using ngrx/store-devtools for debugging store
+**Run json server:**
 
-**branch: debugging**
-simple-counter with effect and ngrx/store-devtools for debugging store
+1. go to json-server directory: `cd json-server`
+2. install dependency: `npm i`
+3. run json-server `npm run start`
+json-server will be start on `3004` port.
